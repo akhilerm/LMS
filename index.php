@@ -4,13 +4,15 @@
 <body>
 
 <?php
-$directory = getcwd()."/Content/";
-$phpfiles = glob($directory . "*.*");
-
-foreach($phpfiles as $phpfile)
-{
-    echo '<a href="'.basename($phpfile).'">'.$phpfile.'</a>';
-	echo '<br>';
+$video_dir = "/Content/";
+$vids = glob($video_dir."*.*");
+foreach($vids as $vid)
+{	
+	echo "in loop";
+	$tmb = $video_dir."thumbs/".substr(basename($vid),0,-4).".jpg";
+    echo '<a href="'.basename($vid).'">'.basename($tmb).'></a>';
+	//echo '<img src="'.$tmb.'" width="50px" height="50px"/>';
+	echo '</br>';
 }
 ?>
 </body>
